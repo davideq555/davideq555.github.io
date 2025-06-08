@@ -1,5 +1,5 @@
 <template>
-  <section id="skills" class="py-20 bg-gray-50 dark:bg-gray-800">
+  <section id="skills" class="min-h-screen flex items-center py-20 bg-gray-50 dark:bg-gray-800">
     <div class="container mx-auto px-6">
       <div class="max-w-6xl mx-auto">
         <h2 class="section-title animate-slide-up">Technical Skills</h2>

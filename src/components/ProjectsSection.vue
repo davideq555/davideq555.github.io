@@ -1,5 +1,5 @@
 <template>
-  <section id="projects" class="py-20 bg-white dark:bg-gray-900">
+  <section id="projects" class="min-h-screen flex items-center py-20 bg-white dark:bg-gray-900">
     <div class="container mx-auto px-6">
       <div class="max-w-6xl mx-auto">
         <h2 class="section-title animate-slide-up">Recent Projects</h2>

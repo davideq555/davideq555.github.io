@@ -1,5 +1,5 @@
 <template>
-  <section id="contact" class="py-20 bg-gray-50 dark:bg-gray-800">
+  <section id="contact" class="min-h-screen flex items-center py-20 bg-gray-50 dark:bg-gray-800">
     <div class="container mx-auto px-6">
       <div class="max-w-4xl mx-auto">
         <h2 class="section-title animate-slide-up">Get In Touch</h2>
