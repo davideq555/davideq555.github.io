@@ -7,8 +7,8 @@
       </header>
       <section class="terminal">
         <pre>
-<span class="gray">Last login: Sun Jun  8 12:34:56 on ttys000</span>
-<span class="green">deqa@macbook</span>:<span class="gray">~/Proyectos/portafolio-backend</span>$ <span>{{ command }}</span><span class="typed-cursor">|</span>
+<span class="gray">Debian GNU/Linux 12 cyborg tty1</span>
+<span class="green">deqa@cyborg</span>:<span class="gray">~/Proyectos/app_fotos</span>$ <span>{{ command }}</span><span class="typed-cursor">|</span>
         </pre>
       </section>
     </div>
@@ -18,7 +18,7 @@
 import { ref, onMounted } from 'vue'
 
 const command = ref('')
-const fullCommand = 'npm run dev'
+const fullCommand = 'docker compose up -d --build'
 
 onMounted(() => {
   let i = 0
@@ -31,7 +31,6 @@ onMounted(() => {
 </script>
 
 <style scoped>
-
 .terminal-window {
   text-align: left;
   width: 600px;
@@ -40,6 +39,27 @@ onMounted(() => {
   margin: auto;
   position: relative;
   box-shadow: 0 8px 32px 0 rgba(0,0,0,0.45);
+}
+
+/* Responsive breakpoints */
+@media (max-width: 700px) {
+  .terminal-window {
+    width: 95vw;
+    min-width: 0;
+    height: 250px;
+    font-size: 10pt;
+  }
+}
+@media (max-width: 480px) {
+  .terminal-window {
+    width: 99vw;
+    height: 180px;
+    font-size: 9pt;
+  }
+  .terminal-window section.terminal {
+    padding: 6px;
+    font-size: 9pt;
+  }
 }
 
 .terminal-window header {
