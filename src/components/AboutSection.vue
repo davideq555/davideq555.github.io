@@ -27,39 +27,15 @@
             </div>
           </div>
 
-          <div class="animate-slide-up">
-            <div class="bg-gradient-to-br from-secondary-400/20 to-primary-400/20 p-8 rounded-2xl">
-              <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-6">What I Do</h3>
-              
-              <div class="space-y-4">
-                <div class="flex items-start space-x-3">
-                  <div class="w-2 h-2 bg-secondary-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <div>
-                    <h4 class="font-semibold text-gray-800 dark:text-white">API Development</h4>
-                    <p class="text-gray-600 dark:text-gray-300 text-sm">RESTful and GraphQL APIs with proper authentication and security</p>
-                  </div>
-                </div>
-                
-                <div class="flex items-start space-x-3">
-                  <div class="w-2 h-2 bg-primary-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <div>
-                    <h4 class="font-semibold text-gray-800 dark:text-white">Database Design</h4>
-                    <p class="text-gray-600 dark:text-gray-300 text-sm">Efficient database schemas and query optimization</p>
-                  </div>
-                </div>
-                
-                <div class="flex items-start space-x-3">
-                  <div class="w-2 h-2 bg-secondary-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <div>
-                    <h4 class="font-semibold text-gray-800 dark:text-white">System Architecture</h4>
-                    <p class="text-gray-600 dark:text-gray-300 text-sm">Scalable microservices and distributed systems</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div class="">
+            <MacTerminal />
           </div>
         </div>
       </div>
     </div>
   </section>
 </template>
+
+<script setup lang="ts">
+import MacTerminal from './MacTerminal.vue'
+</script>
