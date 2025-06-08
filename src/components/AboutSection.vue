@@ -27,7 +27,7 @@
             </div>
           </div>
 
-          <div class="">
+          <div class="animate-slide-up">
             <MacTerminal />
           </div>
         </div>
