@@ -59,7 +59,6 @@
 <script setup lang="ts">
 import { 
   ServerIcon,  
-  ShoppingCartIcon, 
   ChatBubbleLeftRightIcon,
   ComputerDesktopIcon,
   BarsArrowUpIcon,
