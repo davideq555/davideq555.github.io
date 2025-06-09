@@ -1,33 +1,78 @@
 <template>
-    <div class="terminal-window">
-      <header>
-        <span class="button red"></span>
-        <span class="button yellow"></span>
-        <span class="button green"></span>
-      </header>
-      <section class="terminal">
-        <pre>
+  <div class="terminal-window">
+    <header>
+      <span class="button red"></span>
+      <span class="button yellow"></span>
+      <span class="button green"></span>
+    </header>
+    <section class="terminal">
+      <pre>
 <span class="gray">Debian GNU/Linux 12 cyborg tty1</span>
-<span class="green">deqa@cyborg</span>:<span class="gray">~/Proyectos/app_fotos</span>$ <span>{{ command }}</span><span class="typed-cursor">|</span>
-        </pre>
-      </section>
-    </div>
+<span class="green">deqa@cyborg</span>:<span class="gray">~/Proyectos/app_fotos</span>$ <span>{{ lines[0] }}</span><span v-if="currentLine === 0" class="typed-cursor">|</span>
+<span v-if="currentLine > 0">[+] Running 3/3
+ ⠿ Network <span class="gray">app_fotos_default</span>    Created
+ ⠿ Container <span class="gray">app_fotos_db_1</span>     Started
+ ⠿ Container <span class="gray">app_fotos_api_1</span>    Started
+</span>
+<span v-if="currentLine > 1"><span class="green">deqa@cyborg</span>:<span class="gray">~/Proyectos/app_fotos</span>$ {{ lines[1] }}</span><span v-if="currentLine === 1" class="typed-cursor">|</span>
+<span v-if="currentLine > 2"><span class="gray">Attaching to app_fotos_db_1, app_fotos_api_1</span>
+<span class="gray">No logs available yet...</span>
+</span>
+      </pre>
+    </section>
+  </div>
 </template>
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 
-const command = ref('')
-const fullCommand = 'docker compose up -d --build'
+const lines = [
+  'docker compose up -d',
+  'docker compose logs',
+]
+const currentLine = ref(0)
 
 onMounted(() => {
+  // Simula el tipeo del primer comando
   let i = 0
-  const interval = setInterval(() => {
-    command.value = fullCommand.slice(0, i)
+  let typing = ''
+  const fullCommand = lines[0]
+  const typeInterval = setInterval(() => {
+    typing = fullCommand.slice(0, i)
+    lines[0] = typing
     i++
-    if (i > fullCommand.length) clearInterval(interval)
-  }, 100)
+    if (i > fullCommand.length) {
+      clearInterval(typeInterval)
+      setTimeout(() => {
+        currentLine.value = 1
+        // Mostrar la salida de docker compose up -d por un momento
+        setTimeout(() => {
+          currentLine.value = 2
+          simulateSecondCommand()
+        }, 1200)
+      }, 400)
+    }
+  }, 80)
 })
+
+function simulateSecondCommand() {
+  // Simula el tipeo del segundo comando
+  let i = 0
+  let typing = ''
+  const fullCommand = lines[1]
+  lines[1] = ''
+  const typeInterval = setInterval(() => {
+    typing = fullCommand.slice(0, i)
+    lines[1] = typing
+    i++
+    if (i > fullCommand.length) {
+      clearInterval(typeInterval)
+      setTimeout(() => {
+        currentLine.value = 3
+      }, 800)
+    }
+  }, 80)
+}
 </script>
 
 <style scoped>

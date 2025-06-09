@@ -145,11 +145,11 @@ const scrollY = ref(0)
 const activeSection = ref('home')
 
 const navItems = [
-  { name: 'Home', href: '#home' },
-  { name: 'About', href: '#about' },
+  { name: 'Inicio', href: '#home' },
+  { name: 'Sobre Mi', href: '#about' },
   { name: 'Skills', href: '#skills' },
-  { name: 'Projects', href: '#projects' },
-  { name: 'Contact', href: '#contact' }
+  { name: 'Projectos', href: '#projects' },
+  { name: 'Contacto', href: '#contact' }
 ]
 
 // Enhanced header classes with scroll effects

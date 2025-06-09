@@ -4,23 +4,23 @@
       <div class="max-w-4xl mx-auto text-center">
         <div class="animate-fade-in">
           <h1 class="text-5xl md:text-7xl font-bold mb-6">
-            <span class="block text-gray-800 dark:text-white mb-2">Hi, I'm</span>
+            <span class="block text-gray-800 dark:text-white mb-2">David Quispe</span>
             <span class="bg-gradient-to-r from-secondary-500 to-primary-500 bg-clip-text text-transparent">
               Backend Developer
             </span>
           </h1>
           
           <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-            I craft robust and scalable server-side solutions with over 5 years of experience in 
-            building APIs, microservices, and distributed systems that power modern applications.
+            Automatizo procesos con IA y conecto sistemas para que trabajen mejor.
+            Backend Developer especializado en integración, APIs y agentes inteligentes.
           </p>
           
           <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <a href="#projects" @click="scrollToSection($event, '#projects')" class="btn-primary">
-              View My Work
+              Mis proyectos
             </a>
             <a href="#contact" @click="scrollToSection($event, '#contact')" class="btn-secondary">
-              Get In Touch
+              Contactame
             </a>
           </div>
         </div>

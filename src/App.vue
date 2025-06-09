@@ -1,14 +1,13 @@
 <template>
   <div class="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
     <TheHeader />
-    <main>
-      <HeroSection />
-      <AboutSection />
-      <SkillsSection />
-      <ProjectsSection />
-      <ContactSection />
+    <main class="snap-y snap-mandatory h-screen overflow-y-scroll">
+      <HeroSection class="snap-start" />
+      <AboutSection class="snap-start" />
+      <SkillsSection class="snap-start" />
+      <ProjectsSection class="snap-start" />
+      <ContactSection class="snap-start" />
     </main>
-    <TheFooter />
   </div>
 </template>
 
@@ -19,5 +18,4 @@ import AboutSection from './components/AboutSection.vue'
 import SkillsSection from './components/SkillsSection.vue'
 import ProjectsSection from './components/ProjectsSection.vue'
 import ContactSection from './components/ContactSection.vue'
-import TheFooter from './components/TheFooter.vue'
 </script>

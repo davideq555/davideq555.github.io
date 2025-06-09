@@ -1,28 +1,30 @@
 <template>
   <section id="about" class="min-h-screen flex items-center py-20 bg-white dark:bg-gray-900">
     <div class="container mx-auto px-4 sm:px-6">
-      <div class="max-w-4xl mx-auto">
-        <h2 class="section-title animate-slide-up">About Me</h2>
+      <div class="max-w-6xl mx-auto">
+        <h2 class="section-title animate-slide-up">Sobre mí</h2>
         
         <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
           <div class="animate-slide-up">
             <p class="text-base sm:text-lg text-gray-600 dark:text-gray-300 mb-4 sm:mb-6 leading-relaxed">
-              I'm a passionate backend developer with expertise in building scalable server-side applications. 
-              I specialize in creating robust APIs, implementing microservices architectures, and optimizing 
-              database performance to deliver exceptional user experiences.
+              Soy un desarrollador backend con una fuerte orientación a la automatización de procesos e 
+              integración de sistemas. Trabajo combinando herramientas de low code como n8n con tecnologías 
+              como APIs REST, Inteligencia Artificial y Python para crear soluciones que realmente ayudan a las personas 
+              y los negocios a trabajar mejor.
             </p>
             
             <p class="text-base sm:text-lg text-gray-600 dark:text-gray-300 mb-6 sm:mb-8 leading-relaxed">
-              With a strong foundation in modern backend technologies, I focus on writing clean, maintainable 
-              code and following best practices in software architecture, security, and performance optimization.
+              También tengo experiencia administrando servidores, conectando múltiples plataformas entre sí, 
+              y adaptando soluciones tecnológicas para entornos donde la tecnología no es el fuerte… pero sí la necesidad.
+              Mi enfoque es práctico: entender los problemas, diseñar flujos eficientes y entregar resultados concretos.
             </p>
 
             <div class="flex flex-wrap gap-4">
               <div class="bg-secondary-100 dark:bg-secondary-900/30 px-4 py-2 rounded-full">
-                <span class="text-secondary-700 dark:text-secondary-300 font-medium">5+ Years Experience</span>
+                <span class="text-secondary-700 dark:text-secondary-300 font-medium">5+ años de experiencia</span>
               </div>
               <div class="bg-primary-100 dark:bg-primary-900/30 px-4 py-2 rounded-full">
-                <span class="text-primary-700 dark:text-primary-300 font-medium">50+ Projects</span>
+                <span class="text-primary-700 dark:text-primary-300 font-medium">25+ Projectos</span>
               </div>
             </div>
           </div>

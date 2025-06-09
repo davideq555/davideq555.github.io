@@ -2,7 +2,7 @@
   <section id="skills" class="min-h-screen flex items-center py-20 bg-gray-50 dark:bg-gray-800">
     <div class="container mx-auto px-6">
       <div class="max-w-6xl mx-auto">
-        <h2 class="section-title animate-slide-up">Technical Skills</h2>
+        <h2 class="section-title animate-slide-up">Skills tecnológicos</h2>
         
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div 
@@ -40,40 +40,40 @@ import {
   CircleStackIcon, 
   CloudIcon, 
   CogIcon, 
-  ShieldCheckIcon, 
-  ChartBarIcon 
+  RocketLaunchIcon,
+  CommandLineIcon, 
 } from '@heroicons/vue/24/outline'
 
 const skillCategories = [
   {
-    title: 'Backend Languages',
+    title: 'Lenguajes de Programación',
     icon: ServerIcon,
-    skills: ['Node.js', 'Python', 'Java', 'Go', 'PHP', 'C#']
+    skills: ['Python', 'PHP', 'JavaScript', 'Genexus']
   },
   {
-    title: 'Databases',
+    title: 'Bases de Datos',
     icon: CircleStackIcon,
-    skills: ['PostgreSQL', 'MongoDB', 'Redis', 'MySQL', 'Elasticsearch']
+    skills: ['PostgreSQL', 'SQL Server', 'Redis', 'MySQL']
   },
   {
     title: 'Cloud & DevOps',
     icon: CloudIcon,
-    skills: ['AWS', 'Docker', 'Kubernetes', 'CI/CD', 'Terraform']
+    skills: ['Docker', 'Kubernetes', 'CI/CD', 'Google Cloud', 'AWS']
   },
   {
     title: 'Frameworks',
     icon: CogIcon,
-    skills: ['Express.js', 'FastAPI', 'Spring Boot', 'Django', 'Laravel']
+    skills: ['Django', 'FastAPI', 'Vue.js', 'Laravel']
   },
   {
-    title: 'Security',
-    icon: ShieldCheckIcon,
-    skills: ['JWT', 'OAuth', 'HTTPS', 'API Security', 'Encryption']
+    title: 'Infraestructura & Servidores',
+    icon: CommandLineIcon,
+    skills: ['GNU/Linux', 'Windows Server', 'Clusterización']
   },
   {
-    title: 'Monitoring',
-    icon: ChartBarIcon,
-    skills: ['Prometheus', 'Grafana', 'ELK Stack', 'New Relic', 'DataDog']
+    title: 'IA & Automatización Inteligente',
+    icon: RocketLaunchIcon,
+    skills: ['n8n', 'Ollama', 'API openIA', 'CRMs', 'Integraciones']
   }
 ]
 </script>
