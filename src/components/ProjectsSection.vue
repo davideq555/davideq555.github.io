@@ -2,7 +2,7 @@
   <section id="projects" class="min-h-screen flex items-center py-20 bg-white dark:bg-gray-900">
     <div class="container mx-auto px-6">
       <div class="max-w-6xl mx-auto">
-        <h2 class="section-title animate-slide-up">Proyectos recientes</h2>
+        <h2 class="section-title animate-slide-up">{{ t('projects.recentProjects') }}</h2>
         
         <div class="grid md:grid-cols-2 gap-8">
           <div 
@@ -17,8 +17,8 @@
                   <component :is="project.icon" class="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3 class="text-xl font-bold text-gray-800 dark:text-white">{{ project.title }}</h3>
-                  <p class="text-gray-500 dark:text-gray-400 text-sm">{{ project.type }}</p>
+                  <h3 class="text-xl font-bold text-gray-800 dark:text-white">{{ t(`projects.projectData.${index}.title`) }}</h3>
+                  <p class="text-gray-500 dark:text-gray-400 text-sm">{{ t(`projects.projectData.${index}.type`) }}</p>
                 </div>
               </div>
               <div class="flex space-x-2">
@@ -37,7 +37,7 @@
                   v-if="project.images && project.images.length"
                   @click="openGallery(project.images, project.imageDescriptions || [])"
                   class="p-2 bg-primary-100 dark:bg-primary-900/30 rounded-lg hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors duration-300"
-                  aria-label="Ver imágenes"
+                  :aria-label="t('projects.gallery.viewImages')"
                 >
                   <svg class="w-4 h-4 text-primary-600 dark:text-primary-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5z" />
@@ -48,7 +48,7 @@
             </div>
             
             <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
-              {{ project.description }}
+              {{ t(`projects.projectData.${index}.description`) }}
             </p>
             
             <div class="flex flex-wrap gap-2">
@@ -68,33 +68,33 @@
     <!-- Galería Modal Mejorada -->
     <div v-if="galleryImages.length" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80">
       <div class="relative w-[80vw] max-w-4xl h-[80vh] bg-white dark:bg-gray-900 rounded-xl shadow-2xl flex flex-col justify-center items-center p-6">
-        <button @click="closeGallery" class="absolute top-4 right-4 text-gray-500 hover:text-red-500 text-3xl font-bold focus:outline-none" aria-label="Cerrar galería">
+        <button @click="closeGallery" class="absolute top-4 right-4 text-gray-500 hover:text-red-500 text-3xl font-bold focus:outline-none" :aria-label="t('projects.gallery.close')">
           &times;
         </button>
         <div class="flex-1 flex flex-col justify-center items-center w-full">
           <img
             :src="galleryImages[galleryIndex]"
-            alt="Imagen del proyecto"
+            :alt="t('projects.gallery.projectImage')"
             class="rounded-lg shadow-lg max-h-[60vh] max-w-full object-contain border border-gray-200 dark:border-gray-700 bg-gray-100 dark:bg-gray-800"
           />
           <!-- Caja de descripción -->
           <div class="w-full mt-4 bg-gray-100 dark:bg-gray-800 rounded p-4 text-gray-700 dark:text-gray-200 text-center shadow">
-            {{ galleryDescriptions[galleryIndex] || 'Sin descripción para esta imagen.' }}
+            {{ galleryDescriptions[galleryIndex] || t('projects.gallery.noDescription') }}
           </div>
           <div class="flex justify-between items-center w-full mt-4">
             <button
               @click="prevImage"
               :disabled="galleryIndex === 0"
               class="px-4 py-2 rounded bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 font-semibold disabled:opacity-50 transition"
-            >Anterior</button>
+            >{{ t('projects.gallery.previous') }}</button>
             <span class="text-gray-500 dark:text-gray-400 text-sm select-none">
-              Imagen {{ galleryIndex + 1 }} de {{ galleryImages.length }}
+              {{ t('projects.gallery.imageOf') }} {{ galleryIndex + 1 }} {{ t('projects.gallery.of') }} {{ galleryImages.length }}
             </span>
             <button
               @click="nextImage"
               :disabled="galleryIndex === galleryImages.length - 1"
               class="px-4 py-2 rounded bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 font-semibold disabled:opacity-50 transition"
-            >Siguiente</button>
+            >{{ t('projects.gallery.next') }}</button>
           </div>
         </div>
       </div>
@@ -109,7 +109,10 @@ import {
   ComputerDesktopIcon,
   BarsArrowUpIcon,
 } from '@heroicons/vue/24/outline'
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
+import { useLanguage } from '../composables/useLanguage'
+
+const { t } = useLanguage()
 
 const galleryImages = ref<string[]>([])
 const galleryDescriptions = ref<string[]>([])
@@ -132,52 +135,40 @@ function nextImage() {
   if (galleryIndex.value < galleryImages.value.length - 1) galleryIndex.value++
 }
 
-const projects = [
+const projects = computed(() => [
   {
-    title: 'Cuentas whatsapp API',
-    type: 'REST API',
     icon: BarsArrowUpIcon,
-    description: 'Se crea una API REST para gestionar cuentas de WhatsApp bussness, incluyendo autenticación, gestión de etiquetas y control de eventos. Integración con servicio de tercero para envío masivo de mensajes.',
     technologies: ['N8n', 'Chatwoot', 'Postgres', 'Redis', 'FastAPI'],
     github: 'https://github.com/davideq555/whatsapp-contactos',
     images: []
   },
   {
-    title: 'Reconocimiento de fotos',
-    type: 'App Desktop',
     icon: ComputerDesktopIcon,
-    description: 'Creacion de aplicacion de escritorio que permite reconocer números en imágenes utilizando Ollama. La interfaz gráfica facilita la selección de carpetas y el procesamiento de múltiples imágenes de manera sencilla.',
     technologies: ['Python', 'Ollama'],
     github: 'https://github.com/davideq555/app_reconocimiento_fotos',
     images: []
   },
   {
-    title: 'Agente IA para ventas',
-    type: 'AI Agent',
     icon: ChatBubbleLeftRightIcon,
-    description: 'Desarrollo de un agente inteligente que utiliza IA para interactuar con clientes potenciales. El agente puede responder preguntas, proporcionar información sobre productos y ayudar en el proceso de ventas.',
     technologies: ['N8n', 'Chatwoot', 'Evolution API', 'Docker'],
     images: [
       '/Screenshot_20250609_161654.png',
       '/Screenshot_20250609_161730.png',
     ],
     imageDescriptions: [
-      'Vista general del agente IA detectanto la intencion del cliente.',
-      'Respuesta del agente IA en 5 mensajes.',
+      t('projects.gallery.imageDescriptions.0'),
+      t('projects.gallery.imageDescriptions.1'),
     ]
   },
   {
-    title: 'Migracion Sistema Legacy',
-    type: 'System Migration',
     icon: ServerIcon,
-    description: 'Migracion de un sistema legacy a un sistema moderno con Django y PostgreSQL. Incluye la migracion de datos y la creacion de servidor para trafico web.',
     technologies: ['Django', 'PostgreSQL', 'Docker', 'Nginx', 'SQL Server', 'Gunicorn'],
     images: [
       '/Screenshot_20250609_163954.png',
     ],
     imageDescriptions: [
-      'Vista del login del sistema nuevo',
+      t('projects.gallery.imageDescriptions.2'),
     ]
   }
-]
+])
 </script>

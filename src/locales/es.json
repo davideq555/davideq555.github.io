@@ -1,0 +1,94 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "skills": "Skills",
+    "projects": "Proyectos",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "name": "David Quispe",
+    "role": "Backend Developer",
+    "description": "Automatizo procesos con IA y conecto sistemas para que trabajen mejor. Backend Developer especializado en integración, APIs y agentes inteligentes.",
+    "myProjects": "Mis proyectos",
+    "contactMe": "Contactame"
+  },
+  "about": {
+    "title": "Sobre mí",
+    "paragraph1": "Soy un desarrollador backend con una fuerte orientación a la automatización de procesos e integración de sistemas. Trabajo combinando herramientas de low code como n8n con tecnologías como APIs REST, Inteligencia Artificial y Python para crear soluciones que realmente ayudan a las personas y los negocios a trabajar mejor.",
+    "paragraph2": "También tengo experiencia administrando servidores, conectando múltiples plataformas entre sí, y adaptando soluciones tecnológicas para entornos donde la tecnología no es el fuerte… pero sí la necesidad. Mi enfoque es práctico: entender los problemas, diseñar flujos eficientes y entregar resultados concretos.",
+    "experience": "5+ años de experiencia",
+    "projects": "25+ Projectos"
+  },
+  "skills": {
+    "title": "Skills tecnológicos",
+    "categories": {
+      "programming": "Lenguajes de Programación",
+      "databases": "Bases de Datos",
+      "cloud": "Cloud & DevOps",
+      "frameworks": "Frameworks",
+      "infrastructure": "Infraestructura & Servidores",
+      "ai": "IA & Automatización Inteligente"
+    }
+  },
+  "projects": {
+    "title": "Proyectos destacados",
+    "viewProject": "Ver proyecto",
+    "viewCode": "Ver código",
+    "recentProjects": "Proyectos recientes",
+    "projectData": [
+      {
+        "title": "Cuentas whatsapp API",
+        "type": "REST API",
+        "description": "Se crea una API REST para gestionar cuentas de WhatsApp bussness, incluyendo autenticación, gestión de etiquetas y control de eventos. Integración con servicio de tercero para envío masivo de mensajes."
+      },
+      {
+        "title": "Reconocimiento de fotos",
+        "type": "App Desktop",
+        "description": "Creacion de aplicacion de escritorio que permite reconocer números en imágenes utilizando Ollama. La interfaz gráfica facilita la selección de carpetas y el procesamiento de múltiples imágenes de manera sencilla."
+      },
+      {
+        "title": "Agente IA para ventas",
+        "type": "AI Agent",
+        "description": "Desarrollo de un agente inteligente que utiliza IA para interactuar con clientes potenciales. El agente puede responder preguntas, proporcionar información sobre productos y ayudar en el proceso de ventas."
+      },
+      {
+        "title": "Migracion Sistema Legacy",
+        "type": "System Migration",
+        "description": "Migracion de un sistema legacy a un sistema moderno con Django y PostgreSQL. Incluye la migracion de datos y la creacion de servidor para trafico web."
+      }
+    ],
+    "gallery": {
+      "close": "Cerrar galería",
+      "viewImages": "Ver imágenes",
+      "previous": "Anterior",
+      "next": "Siguiente",
+      "imageOf": "Imagen",
+      "of": "de",
+      "noDescription": "Sin descripción para esta imagen.",
+      "projectImage": "Imagen del proyecto",
+      "imageDescriptions": [
+        "Vista general del agente IA detectanto la intencion del cliente.",
+        "Respuesta del agente IA en 5 mensajes.",
+        "Vista del login del sistema nuevo"
+      ]
+    }
+  },
+  "contact": {
+    "title": "Contacto",
+    "subtitle": "¿Tienes un proyecto en mente?",
+    "description": "Estoy disponible para nuevos proyectos y colaboraciones. ¡Hablemos!",
+    "email": "Correo electrónico",
+    "phone": "Teléfono",
+    "location": "Ubicación",
+    "workTogether": "Trabajemos Juntos",
+    "workDescription": "Siempre estoy interesado en discutir nuevas oportunidades, proyectos desafiantes, o simplemente tener una conversación sobre desarrollo backend y arquitectura de sistemas.",
+    "emailLabel": "Email",
+    "socialNetworks": "Redes sociales",
+    "footerText": "Backend Developer Portfolio. Construido con Vue.js & Tailwind CSS."
+  },
+  "footer": {
+    "madeWith": "Hecho con",
+    "by": "por"
+  }
+}

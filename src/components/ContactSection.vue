@@ -2,14 +2,13 @@
   <section id="contact" class="min-h-screen flex items-center py-20 bg-gray-50 dark:bg-gray-800">
     <div class="container mx-auto px-6">
       <div class="max-w-4xl mx-auto">
-        <h2 class="section-title animate-slide-up">Contacto</h2>
+        <h2 class="section-title animate-slide-up">{{ t('contact.title') }}</h2>
         
         <div class="grid md:grid-cols-2 gap-12">
           <div class="animate-slide-up">
-            <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-6">Trabajemos Juntos</h3>
+            <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-6">{{ t('contact.workTogether') }}</h3>
             <p class="text-lg text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
-              Siempre estoy interesado en discutir nuevas oportunidades, proyectos desafiantes, 
-              o simplemente tener una conversación sobre desarrollo backend y arquitectura de sistemas.
+              {{ t('contact.workDescription') }}
             </p>
             
             <div class="space-y-4">
@@ -18,9 +17,9 @@
                   <EnvelopeIcon class="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h4 class="font-semibold text-gray-800 dark:text-white">Email</h4>
-                  <a href="mailto:davideq555@gmail.com" class="text-secondary-600 dark:text-secondary-400 hover:underline">
-                    davideq555@gmail.com
+                  <h4 class="font-semibold text-gray-800 dark:text-white">{{ t('contact.emailLabel') }}</h4>
+                  <a href="mailto:davide.aramayo@gmail.com" class="text-secondary-600 dark:text-secondary-400 hover:underline">
+                    davide.aramayo@gmail.com
                   </a>
                 </div>
               </div>
@@ -28,7 +27,7 @@
           </div>
 
           <div class="animate-slide-up flex flex-col items-center justify-center space-y-6">
-            <h4 class="text-lg font-semibold text-gray-800 dark:text-white mb-2">Redes sociales</h4>
+            <h4 class="text-lg font-semibold text-gray-800 dark:text-white mb-2">{{ t('contact.socialNetworks') }}</h4>
             <div class="flex space-x-6">
               <a
                 href="https://github.com/davideq555"
@@ -69,7 +68,7 @@
         <!-- Leyenda final -->
         <div class="border-t border-gray-800 mt-8 pt-8 text-center">
           <p class="text-gray-400">
-            © {{ new Date().getFullYear() }} Backend Developer Portfolio. Construido con Vue.js & Tailwind CSS.
+            © {{ new Date().getFullYear() }} {{ t('contact.footerText') }}
           </p>
         </div>
       </div>
@@ -79,4 +78,7 @@
 
 <script setup lang="ts">
 import { EnvelopeIcon } from '@heroicons/vue/24/outline'
+import { useLanguage } from '../composables/useLanguage'
+
+const { t } = useLanguage()
 </script>

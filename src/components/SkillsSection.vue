@@ -2,7 +2,7 @@
   <section id="skills" class="min-h-screen flex items-center py-20 bg-gray-50 dark:bg-gray-800">
     <div class="container mx-auto px-6">
       <div class="max-w-6xl mx-auto">
-        <h2 class="section-title animate-slide-up">Skills tecnológicos</h2>
+        <h2 class="section-title animate-slide-up">{{ t('skills.title') }}</h2>
         
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div 
@@ -15,7 +15,7 @@
               <div class="w-12 h-12 bg-gradient-to-r from-secondary-500 to-primary-500 rounded-lg flex items-center justify-center mr-4">
                 <component :is="category.icon" class="w-6 h-6 text-white" />
               </div>
-              <h3 class="text-xl font-bold text-gray-800 dark:text-white">{{ category.title }}</h3>
+              <h3 class="text-xl font-bold text-gray-800 dark:text-white">{{ t(category.titleKey) }}</h3>
             </div>
             
             <div class="flex flex-wrap gap-2">
@@ -43,35 +43,38 @@ import {
   RocketLaunchIcon,
   CommandLineIcon, 
 } from '@heroicons/vue/24/outline'
+import { useLanguage } from '../composables/useLanguage'
+
+const { t } = useLanguage()
 
 const skillCategories = [
   {
-    title: 'Lenguajes de Programación',
+    titleKey: 'skills.categories.programming',
     icon: ServerIcon,
     skills: ['Python', 'PHP', 'JavaScript', 'Genexus']
   },
   {
-    title: 'Bases de Datos',
+    titleKey: 'skills.categories.databases',
     icon: CircleStackIcon,
     skills: ['PostgreSQL', 'SQL Server', 'Redis', 'MySQL']
   },
   {
-    title: 'Cloud & DevOps',
+    titleKey: 'skills.categories.cloud',
     icon: CloudIcon,
     skills: ['Docker', 'Kubernetes', 'CI/CD', 'Google Cloud', 'AWS']
   },
   {
-    title: 'Frameworks',
+    titleKey: 'skills.categories.frameworks',
     icon: CogIcon,
     skills: ['Django', 'FastAPI', 'Vue.js', 'Laravel']
   },
   {
-    title: 'Infraestructura & Servidores',
+    titleKey: 'skills.categories.infrastructure',
     icon: CommandLineIcon,
     skills: ['GNU/Linux', 'Windows Server', 'Clusterización']
   },
   {
-    title: 'IA & Automatización Inteligente',
+    titleKey: 'skills.categories.ai',
     icon: RocketLaunchIcon,
     skills: ['n8n', 'Ollama', 'API openIA', 'CRMs', 'Integraciones']
   }

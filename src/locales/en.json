@@ -1,0 +1,94 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "name": "David Quispe",
+    "role": "Backend Developer",
+    "description": "I automate processes with AI and connect systems to work better. Backend Developer specialized in integration, APIs and intelligent agents.",
+    "myProjects": "My projects",
+    "contactMe": "Contact me"
+  },
+  "about": {
+    "title": "About me",
+    "paragraph1": "I'm a backend developer with a strong focus on process automation and system integration. I work combining low-code tools like n8n with technologies like REST APIs, Artificial Intelligence and Python to create solutions that really help people and businesses work better.",
+    "paragraph2": "I also have experience managing servers, connecting multiple platforms with each other, and adapting technological solutions for environments where technology is not the strong point... but the need is. My approach is practical: understand the problems, design efficient flows and deliver concrete results.",
+    "experience": "5+ years of experience",
+    "projects": "25+ Projects"
+  },
+  "skills": {
+    "title": "Technical skills",
+    "categories": {
+      "programming": "Programming Languages",
+      "databases": "Databases",
+      "cloud": "Cloud & DevOps",
+      "frameworks": "Frameworks",
+      "infrastructure": "Infrastructure & Servers",
+      "ai": "AI & Intelligent Automation"
+    }
+  },
+  "projects": {
+    "title": "Featured projects",
+    "viewProject": "View project",
+    "viewCode": "View code",
+    "recentProjects": "Recent projects",
+    "projectData": [
+      {
+        "title": "WhatsApp Business API",
+        "type": "REST API",
+        "description": "Created a REST API to manage WhatsApp business accounts, including authentication, tag management, and event control. Integration with third-party service for mass messaging."
+      },
+      {
+        "title": "Photo Recognition",
+        "type": "Desktop App",
+        "description": "Created a desktop application that recognizes numbers in images using Ollama. The graphical interface facilitates folder selection and processing of multiple images in a simple way."
+      },
+      {
+        "title": "AI Sales Agent",
+        "type": "AI Agent",
+        "description": "Development of an intelligent agent that uses AI to interact with potential customers. The agent can answer questions, provide product information, and assist in the sales process."
+      },
+      {
+        "title": "Legacy System Migration",
+        "type": "System Migration",
+        "description": "Migration of a legacy system to a modern system with Django and PostgreSQL. Includes data migration and web traffic server creation."
+      }
+    ],
+    "gallery": {
+      "close": "Close gallery",
+      "viewImages": "View images",
+      "previous": "Previous",
+      "next": "Next",
+      "imageOf": "Image",
+      "of": "of",
+      "noDescription": "No description for this image.",
+      "projectImage": "Project image",
+      "imageDescriptions": [
+        "General view of the AI agent detecting customer intention.",
+        "AI agent response in 5 messages.",
+        "New system login view"
+      ]
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Do you have a project in mind?",
+    "description": "I'm available for new projects and collaborations. Let's talk!",
+    "email": "Email",
+    "phone": "Phone",
+    "location": "Location",
+    "workTogether": "Let's Work Together",
+    "workDescription": "I'm always interested in discussing new opportunities, challenging projects, or simply having a conversation about backend development and systems architecture.",
+    "emailLabel": "Email",
+    "socialNetworks": "Social networks",
+    "footerText": "Backend Developer Portfolio. Built with Vue.js & Tailwind CSS."
+  },
+  "footer": {
+    "madeWith": "Made with",
+    "by": "by"
+  }
+}

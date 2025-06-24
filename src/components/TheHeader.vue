@@ -46,6 +46,23 @@
 
         <!-- Right side controls with enhanced styling -->
         <div class="flex items-center space-x-3">
+          <!-- Language toggle -->
+          <button
+            @click="toggleLanguage"
+            class="language-toggle relative p-3 rounded-xl bg-white/10 dark:bg-gray-800/50 backdrop-blur-sm border border-gray-200/20 dark:border-gray-700/50 hover:bg-secondary-100/20 dark:hover:bg-secondary-900/20 transition-all duration-500 group overflow-hidden"
+            :aria-label="'Switch to ' + (currentLanguage === 'es' ? 'English' : 'Español')"
+          >
+            <!-- Background animation -->
+            <div class="absolute inset-0 bg-gradient-to-r from-secondary-500/10 to-primary-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            
+            <!-- Language indicator -->
+            <div class="relative z-10 w-5 h-5 flex items-center justify-center">
+              <span class="text-xs font-bold text-gray-700 dark:text-gray-300 group-hover:text-secondary-500 dark:group-hover:text-secondary-400 transition-colors duration-300">
+                {{ currentLanguage.toUpperCase() }}
+              </span>
+            </div>
+          </button>
+          
           <!-- Theme toggle with enhanced animation -->
           <button
             @click="toggleTheme"
@@ -138,19 +155,21 @@
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { SunIcon, MoonIcon } from '@heroicons/vue/24/outline'
 import { useTheme } from '../composables/useTheme'
+import { useLanguage } from '../composables/useLanguage'
 
 const { isDark, toggleTheme } = useTheme()
+const { currentLanguage, toggleLanguage, t } = useLanguage()
 const isMobileMenuOpen = ref(false)
 const scrollY = ref(0)
 const activeSection = ref('home')
 
-const navItems = [
-  { name: 'Inicio', href: '#home' },
-  { name: 'Sobre Mi', href: '#about' },
-  { name: 'Skills', href: '#skills' },
-  { name: 'Projectos', href: '#projects' },
-  { name: 'Contacto', href: '#contact' }
-]
+const navItems = computed(() => [
+  { name: t('nav.home'), href: '#home' },
+  { name: t('nav.about'), href: '#about' },
+  { name: t('nav.skills'), href: '#skills' },
+  { name: t('nav.projects'), href: '#projects' },
+  { name: t('nav.contact'), href: '#contact' }
+])
 
 // Enhanced header classes with scroll effects
 const headerClasses = computed(() => ({
@@ -172,7 +191,7 @@ const scrollToSection = (event: Event, href: string) => {
 
 // Enhanced scroll tracking for active section
 const updateActiveSection = () => {
-  const sections = navItems.map(item => item.href.slice(1))
+  const sections = navItems.value.map(item => item.href.slice(1))
   const scrollPosition = window.scrollY + 100
 
   for (const section of sections) {
