@@ -7,7 +7,7 @@
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div 
             v-for="(category, index) in skillCategories" 
-            :key="category.title"
+            :key="index"
             class="card p-6 animate-slide-up"
             :style="{ animationDelay: `${index * 0.1}s` }"
           >

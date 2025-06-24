@@ -7,7 +7,7 @@
         <div class="grid md:grid-cols-2 gap-8">
           <div 
             v-for="(project, index) in projects" 
-            :key="project.title"
+            :key="index"
             class="card p-6 animate-slide-up"
             :style="{ animationDelay: `${index * 0.1}s` }"
           >
