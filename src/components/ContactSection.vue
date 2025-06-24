@@ -18,8 +18,8 @@
                 </div>
                 <div>
                   <h4 class="font-semibold text-gray-800 dark:text-white">{{ t('contact.emailLabel') }}</h4>
-                  <a href="mailto:davide.aramayo@gmail.com" class="text-secondary-600 dark:text-secondary-400 hover:underline">
-                    davide.aramayo@gmail.com
+                  <a href="mailto:davideq555@gmail.com" class="text-secondary-600 dark:text-secondary-400 hover:underline">
+                    davideq555@gmail.com
                   </a>
                 </div>
               </div>
