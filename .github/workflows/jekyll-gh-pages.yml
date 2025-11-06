@@ -3,7 +3,7 @@ name: Deploy Vue.js to GitHub Pages
 on:
   push:
     branches:
-      - main  # Cambia esto si tu rama principal se llama distinto
+      - main
 
 jobs:
   build-deploy:
@@ -23,6 +23,12 @@ jobs:
 
       - name: Build
         run: npm run build
+      
+      - name: Ensure docs directory exists
+        run: mkdir -p docs
+
+      - name: Check build output
+        run: ls -la docs
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
